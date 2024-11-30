@@ -3,30 +3,33 @@ package wordlist
 import (
 	"bufio"
 	"fmt"
+	"maps"
 	"os"
 	"strings"
 )
 
-func FilterWordlist(candidateRunes []rune, wordlist []string) []string {
-	return []string{}
-}
-
 func ReadAndCreateWordList(filePath string, baseWords []string) [][]rune {
 	unfilteredRuneList := createRuneList(filePath)
 	fmt.Println("Unfiltered List length: ", len(unfilteredRuneList))
-	baseWordRuneMap := map[rune]bool{}
+	baseWordRuneMap := map[rune]int{}
 	for _, word := range baseWords {
 		for _, character := range word {
-			baseWordRuneMap[character] = true
+			baseWordRuneMap[character] += 1
 		}
 	}
+	filteredRuneList := filterWordList(unfilteredRuneList, baseWordRuneMap)
+
+	fmt.Println("Filtered List length: ", len(filteredRuneList))
+	return filteredRuneList
+}
+
+func filterWordList(candidateRuneList [][]rune, baseWordRuneMap map[rune]int) [][]rune {
 	filteredRuneList := [][]rune{}
-	for _, candidateWord := range unfilteredRuneList {
+	for _, candidateWord := range candidateRuneList {
 		if !wordContainsInvalidRunes(candidateWord, baseWordRuneMap) {
 			filteredRuneList = append(filteredRuneList, candidateWord)
 		}
 	}
-	fmt.Println("Filtered List length: ", len(filteredRuneList))
 	return filteredRuneList
 }
 
@@ -48,11 +51,14 @@ func createRuneList(filePath string) [][]rune {
 	return runeList
 }
 
-func wordContainsInvalidRunes(word []rune, baseRuneList map[rune]bool) bool {
+func wordContainsInvalidRunes(word []rune, baseRuneList map[rune]int) bool {
+	cloneRuneMap := maps.Clone(baseRuneList)
 	for _, character := range word {
-		_, present := baseRuneList[character]
-		if !present {
+		count, present := cloneRuneMap[character]
+		if !present || count == 0 {
 			return true
+		} else {
+			cloneRuneMap[character] -= 1
 		}
 	}
 	return false
