@@ -10,7 +10,7 @@ import (
 func main() {
 	fmt.Println("Hello, World!")
 	permutations.GeneratePermutations(3)
-	wordlist.ReadAndCreateWordList("wordlist.txt", []string{"permutation", "city"})
+	candidateWordList := wordlist.ReadAndCreateWordList("wordlist.txt", []string{"permutation", "city"})
 
 	// generate permutations
 	// for each permutations generate a string based on the permutation characters
@@ -23,7 +23,11 @@ func main() {
 	// if yes output word string
 
 	//iterate through the list of candidate words
-	//for each word figure out the remaining characters left from the input words and the number of characters left in the string
+	for _, word := range candidateWordList {
+		//for each word figure out the remaining characters left from the input words and the number of characters left in the string
+		fmt.Println("Word: ", string(word))
+	}
+
 	//create a new list of candidate words that don't use unavailable characters and which aren't too long
 	//call a method with the new list of candidate words and the remaining characters, and a slice with the current word at the front
 
@@ -52,6 +56,8 @@ func permfinder(targetLength int, candidateWords []string, remainingCharacters m
 		// for each word figure out the remaining characters left from the input words and the number of characters left in the string
 		// create a new list of candidate words that don't use unavailable characters and which aren't too long
 		// call a method with the new list of candidate words and the remaining characters, and a slice with the current word at the front
+		fmt.Println("Word: ", word)
+
 	}
 }
 

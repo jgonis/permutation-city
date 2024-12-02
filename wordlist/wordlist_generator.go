@@ -6,24 +6,21 @@ import (
 	"maps"
 	"os"
 	"strings"
+
+	"github.com/jgonis/permutation-city/runemap"
 )
 
 func ReadAndCreateWordList(filePath string, baseWords []string) [][]rune {
-	unfilteredRuneList := createRuneList(filePath)
+	unfilteredRuneList := readWordsFromWordList(filePath)
 	fmt.Println("Unfiltered List length: ", len(unfilteredRuneList))
-	baseWordRuneMap := map[rune]int{}
-	for _, word := range baseWords {
-		for _, character := range word {
-			baseWordRuneMap[character] += 1
-		}
-	}
+	baseWordRuneMap := runemap.CreateRuneMap(baseWords)
 	filteredRuneList := filterWordList(unfilteredRuneList, baseWordRuneMap)
 
 	fmt.Println("Filtered List length: ", len(filteredRuneList))
 	return filteredRuneList
 }
 
-func filterWordList(candidateRuneList [][]rune, baseWordRuneMap map[rune]int) [][]rune {
+func filterWordList(candidateRuneList [][]rune, baseWordRuneMap runemap.RuneMap) [][]rune {
 	filteredRuneList := [][]rune{}
 	for _, candidateWord := range candidateRuneList {
 		if !wordContainsInvalidRunes(candidateWord, baseWordRuneMap) {
@@ -31,24 +28,6 @@ func filterWordList(candidateRuneList [][]rune, baseWordRuneMap map[rune]int) []
 		}
 	}
 	return filteredRuneList
-}
-
-func createRuneList(filePath string) [][]rune {
-	runeList := [][]rune{}
-	fileReader, err := os.Open(filePath)
-	if err != nil {
-		panic(err)
-	}
-	fileScanner := bufio.NewScanner(fileReader)
-	for fileScanner.Scan() {
-		line := fileScanner.Text()
-		line = strings.ToLower(line)
-		runeList = append(runeList, []rune(line))
-	}
-	if err := fileScanner.Err(); err != nil {
-		panic(err)
-	}
-	return runeList
 }
 
 func wordContainsInvalidRunes(word []rune, baseRuneList map[rune]int) bool {
@@ -62,4 +41,22 @@ func wordContainsInvalidRunes(word []rune, baseRuneList map[rune]int) bool {
 		}
 	}
 	return false
+}
+
+func readWordsFromWordList(wordlistFilePath string) [][]rune {
+	runeList := [][]rune{}
+	fileReader, err := os.Open(wordlistFilePath)
+	if err != nil {
+		panic(err)
+	}
+	fileScanner := bufio.NewScanner(fileReader)
+	for fileScanner.Scan() {
+		line := fileScanner.Text()
+		line = strings.ToLower(line)
+		runeList = append(runeList, []rune(line))
+	}
+	if err := fileScanner.Err(); err != nil {
+		panic(err)
+	}
+	return runeList
 }
