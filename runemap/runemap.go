@@ -1,14 +1,16 @@
 package runemap
 
-import "maps"
+import (
+	"maps"
+)
 
-type RuneMap map[rune]int
+type RuneMap map[string]int
 
 func CreateRuneMap(baseWords []string) RuneMap {
 	runeMap := RuneMap{}
 	for _, word := range baseWords {
 		for _, character := range word {
-			runeMap[character] += 1
+			runeMap[string(character)] += 1
 		}
 	}
 	return runeMap
@@ -17,9 +19,9 @@ func CreateRuneMap(baseWords []string) RuneMap {
 func (rm *RuneMap) RemoveRunesFromWord(word []rune) RuneMap {
 	newRuneMap := maps.Clone(*rm)
 	for _, character := range word {
-		newRuneMap[character] -= 1
-		if newRuneMap[character] == 0 {
-			delete(newRuneMap, character)
+		newRuneMap[string(character)] -= 1
+		if newRuneMap[string(character)] == 0 {
+			delete(newRuneMap, string(character))
 		}
 	}
 	return newRuneMap

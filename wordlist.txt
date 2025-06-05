@@ -5360,7 +5360,6 @@ afunction
 afunctional
 afwillite
 afzelia
-ag
 aga
 agabanee
 agacante
@@ -15402,7 +15401,6 @@ anywise
 anywither
 anzac
 anzanian
-ao
 aogiri
 aoife
 aonach
@@ -17021,7 +17019,6 @@ aquose
 aquosity
 aquotization
 aquotize
-ar
 ara
 arab
 araba
@@ -23301,7 +23298,7 @@ avuncularities
 avuncularity
 avuncularly
 avunculate
-aw
+aww
 awa
 awabakal
 awabi
@@ -23629,7 +23626,6 @@ ayurvedas
 ayurvedic
 ayurvedics
 ayyubid
-az
 azadrachta
 azafrin
 azalea
@@ -23825,9 +23821,7 @@ azygous
 azyme
 azymite
 azymous
-b
 b's
-ba
 baa
 baaed
 baahling
@@ -39800,7 +39794,6 @@ bryum
 bstj
 btl
 btu
-bu
 bual
 buaze
 bub
@@ -41846,9 +41839,7 @@ byzantinism
 byzantinize
 byzantium
 byzants
-c
 c's
-ca
 caam
 caama
 caaming
@@ -47840,7 +47831,6 @@ cbs
 ccny
 ccoya
 cdc
-ce
 ceanothus
 ceanothuses
 cearin
@@ -72404,7 +72394,6 @@ cytozymase
 cytozyme
 cytula
 cyzicene
-cz
 czar
 czardas
 czardases
@@ -72440,7 +72429,6 @@ czechoslovakia
 czechoslovakian
 czechs
 czerniak
-d
 d'art
 d'etat
 d'etre
@@ -90245,7 +90233,6 @@ dyvour
 dyvours
 dzeren
 dzungar
-e
 e'er
 e's
 e.g
@@ -103465,7 +103452,6 @@ eyry
 ezba
 ezekiel
 ezra
-f
 f's
 fa
 faa
@@ -114836,7 +114822,6 @@ fynbos
 fyrd
 fytte
 fyttes
-g
 g's
 ga
 gab
@@ -125461,7 +125446,6 @@ gyve
 gyved
 gyves
 gyving
-h
 h's
 ha
 haab
@@ -151321,7 +151305,6 @@ iztle
 izvestia
 izzard
 izzards
-j
 j's
 jaalin
 jab
@@ -153922,7 +153905,6 @@ juza
 jynginae
 jyngine
 jynx
-k
 k's
 ka
 kaas
@@ -157588,7 +157570,6 @@ kythes
 kything
 kyurin
 kyurinish
-l
 l'oeil
 l's
 l'vov
@@ -167313,7 +167294,6 @@ lytta
 lyttae
 lyttas
 lyxose
-m
 m's
 ma
 ma'am
@@ -186952,7 +186932,6 @@ myzostomida
 myzostomidae
 myzostomidan
 myzostomous
-n
 n's
 na
 naa
@@ -196616,7 +196595,6 @@ nystatin
 nystatins
 nyu
 nyxis
-o
 o'brien
 o'clock
 o'connell
@@ -208594,7 +208572,6 @@ ozophen
 ozophene
 ozostomia
 ozotype
-p
 p's
 pa
 paal
@@ -242726,7 +242703,6 @@ pyxidium
 pyxie
 pyxies
 pyxis
-q
 q's
 qabala
 qabalah
@@ -244422,7 +244398,6 @@ qurush
 qurushes
 qwerty
 qwertys
-r
 r&d
 r's
 ra
@@ -261314,16 +261289,11 @@ rynds
 rynt
 ryokan
 ryokans
-ryot
-ryots
-ryotwar
-ryotwari
 rype
 rypeck
 rytidosis
 rytina
 ryukyu
-s
 s's
 sa
 saa
@@ -298894,7 +298864,6 @@ szekler
 szilard
 szlachta
 szopelka
-t
 t's
 ta
 taa
@@ -310115,7 +310084,6 @@ totuava
 totum
 toty
 totyman
-tou
 toucan
 toucanet
 toucanid
@@ -315353,7 +315321,6 @@ tsutsugamushis
 tsutsutsi
 ttl
 tty
-tu
 tua
 tualati
 tuamotu
@@ -316040,7 +316007,6 @@ tups
 tupuna
 tuque
 tuques
-tur
 turacin
 turaco
 turacos
@@ -317470,7 +317436,6 @@ tzontle
 tzotzil
 tzuris
 tzutuhil
-u
 u's
 u.s
 u.s.a
@@ -336165,7 +336130,6 @@ usurps
 usury
 usward
 uswards
-ut
 uta
 utah
 utahan
@@ -336388,7 +336352,6 @@ uzaron
 uzbak
 uzbeg
 uzbek
-v
 v's
 va
 vaagmer
@@ -341586,7 +341549,6 @@ vulvovaginitis
 vum
 vying
 vyingly
-w
 w's
 wa
 waac
@@ -348083,7 +348045,6 @@ wyve
 wyver
 wyvern
 wyverns
-x
 x's
 xanthaline
 xanthamic
@@ -348554,7 +348515,6 @@ xystos
 xysts
 xystum
 xystus
-y
 y's
 ya
 yaba
@@ -349517,7 +349477,6 @@ ypsiliform
 ypsiloid
 ypurinan
 yquem
-yr
 ytterbia
 ytterbias
 ytterbic
@@ -349648,7 +349607,6 @@ yvette
 yvonne
 ywca
 ywis
-z
 z's
 za
 zabaean
