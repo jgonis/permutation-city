@@ -7,49 +7,6 @@ import (
 	"github.com/jgonis/permutation-city/runemap"
 )
 
-func TestWordContainsInvalidRunes(t *testing.T) {
-	testCases := map[string]struct {
-		word        []rune
-		baseRuneMap map[string]int
-		expected    bool
-	}{
-		"Word contains only valid runes": {
-			word:        []rune("car"),
-			baseRuneMap: map[string]int{"c": 1, "a": 1, "r": 1},
-			expected:    false,
-		},
-		"Word contains invalid runes": {
-			word:        []rune("carz"),
-			baseRuneMap: map[string]int{"c": 1, "a": 1, "r": 1},
-			expected:    true,
-		},
-		"Word contains more runes than allowed": {
-			word:        []rune("carr"),
-			baseRuneMap: map[string]int{"c": 1, "a": 1, "r": 1},
-			expected:    true,
-		},
-		"Word contains valid runes with repetition": {
-			word:        []rune("carr"),
-			baseRuneMap: map[string]int{"c": 1, "a": 1, "r": 2},
-			expected:    false,
-		},
-		"Empty word": {
-			word:        []rune(""),
-			baseRuneMap: map[string]int{"c": 1, "a": 1, "r": 1},
-			expected:    false,
-		},
-	}
-
-	for name, tc := range testCases {
-		t.Run(name, func(t *testing.T) {
-			result := wordContainsInvalidRunes(string(tc.word), tc.baseRuneMap)
-			if result != tc.expected {
-				t.Errorf("got %v, want %v", result, tc.expected)
-			}
-		})
-	}
-}
-
 func TestFilterWordList(t *testing.T) {
 	testCases := map[string]struct {
 		candidateRunes []string

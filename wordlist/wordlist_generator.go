@@ -2,7 +2,6 @@ package wordlist
 
 import (
 	"bufio"
-	"maps"
 	"os"
 	"strconv"
 	"strings"
@@ -12,7 +11,6 @@ import (
 
 func ReadAndCreateWordList(filePath string, runeMap runemap.RuneMap) []string {
 	unfilteredRuneList := readWordsFromWordList(filePath)
-	// fmt.Println("Unfiltered List length: ", len(unfilteredRuneList))
 	filteredRuneList := FilterWordList(unfilteredRuneList, runeMap)
 
 	// fmt.Println("Filtered List length: ", len(filteredRuneList))
@@ -33,24 +31,11 @@ func ReadAndCreateFrequencyMap(filepath string) map[string]uint64 {
 func FilterWordList(candidateWordList []string, baseWordRuneMap runemap.RuneMap) []string {
 	filteredRuneList := []string{}
 	for _, candidateWord := range candidateWordList {
-		if !wordContainsInvalidRunes(candidateWord, baseWordRuneMap) {
+		if baseWordRuneMap.IsWordValid(candidateWord) {
 			filteredRuneList = append(filteredRuneList, string(candidateWord))
 		}
 	}
 	return filteredRuneList
-}
-
-func wordContainsInvalidRunes(word string, baseRuneList map[string]int) bool {
-	cloneRuneMap := maps.Clone(baseRuneList)
-	for _, character := range word {
-		count, present := cloneRuneMap[string(character)]
-		if !present || count == 0 {
-			return true
-		} else {
-			cloneRuneMap[string(character)] -= 1
-		}
-	}
-	return false
 }
 
 func readWordsFromWordList(wordlistFilePath string) []string {
