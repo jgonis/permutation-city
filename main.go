@@ -88,8 +88,8 @@ func uniqueWordListStream(ctx context.Context, wordlistStream <-chan []string) <
 	go func() {
 		defer close(uniqueWordlistStream)
 		uniqueWordSet := map[string]bool{}
-		for wordlist := range wordlistStream {
-			sortedWordlist := slices.Clone(wordlist)
+		for inputWordlist := range wordlistStream {
+			sortedWordlist := slices.Clone(inputWordlist)
 			slices.Sort(sortedWordlist)
 			sortedWordlistAsString := strings.Join(sortedWordlist, " ")
 			if _, found := uniqueWordSet[sortedWordlistAsString]; !found {
